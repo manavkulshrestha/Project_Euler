@@ -52,6 +52,6 @@ def largest_prime_factor(n, divisor=2):
 		elif divisor > n//2:
 			return n
 		else:
-			return largest_prime_factor2(n//divisor,divisor=divisor)
+			return largest_prime_factor(n//divisor,divisor=divisor)
 
 print(largest_prime_factor(number))
