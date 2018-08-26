@@ -1,12 +1,17 @@
 # 1000^2 = 1000000 so, number of digits is 6
 
 def is_palindrome(n):
-	reverse, original = 0, n
+	str_n = str(n)
+	return (str_n[::-1] == str_n)
 
-	while original > 0:
-		reverse = reverse*10 + original%10;
-		original //= 10
+maximum = -1
 
-	return n == reverse;
+for i in range(999,99,-1):
+	for j in range(999,99,-1):
+		product = i*j
+		if is_palindrome(product) and product > maximum:
+			maximum = product
 
-print(is_palindrome(9009))
+print('No palindrome in range' if maximum == -1 else maximum)
+
+
